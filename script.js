@@ -19,6 +19,7 @@ function drawObstacle(ctx, type, x, y, h, w) {
     tree.moveTo(x + w / 2, y);
     tree.lineTo(x, y + h * 0.9);
     tree.lineTo(x + w * 4, y + h * 0.85);
+
     tree.lineTo(x + w * 0.33, y + h);
     tree.lineTo(x + w * 0.66, y + h);
     tree.lineTo(x + w * 0.66, y + h * 0.85);
@@ -86,12 +87,14 @@ function draw() {
     ctx.font = "25px bold";
     ctx.fillText(`Use ← and → to steer`, cw / 2, 400);
     ctx.fillStyle = "#830bc8";
+
   }
 
   // Score
   ctx.textAlign = "start";
   ctx.font = "30px bold";
   ctx.fillText(`Score: ${Math.floor((totalY - 1) / 4)} Meters`, 10, 25);
+
 
   // Draw Skier
   const skier = new Path2D();
