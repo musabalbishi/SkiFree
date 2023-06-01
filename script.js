@@ -10,15 +10,15 @@ let obstacles = [];
 let game = false;
 let keys = true;
 let totalY = 0;
-// hii
+
 // Draw an obstacle
 function drawObstacle(ctx, type, x, y, h, w) {
   if (type === "tree") {
-    ctx.fillStyle = "#624D6E";
+    ctx.fillStyle = "#024522";
     const tree = new Path2D();
     tree.moveTo(x + w / 2, y);
     tree.lineTo(x, y + h * 0.9);
-    tree.lineTo(x + w * 0.33, y + h * 0.85);
+    tree.lineTo(x + w * 4, y + h * 0.85);
     tree.lineTo(x + w * 0.33, y + h);
     tree.lineTo(x + w * 0.66, y + h);
     tree.lineTo(x + w * 0.66, y + h * 0.85);
@@ -74,24 +74,24 @@ function draw() {
   ctx.clearRect(0, 0, cw, ch);
   totalY++;
 
-  ctx.fillStyle = "#9B000F";
+  ctx.fillStyle = "#830bc8";
 
   if (totalY < 10) {
     ctx.textAlign = "center";
-    ctx.fillStyle = "#111213";
-    ctx.font = "40px Helvetica";
-    ctx.fillText(`SkiFree!`, cw / 2, 60);
-    ctx.font = "20px Helvetica";
-    ctx.fillText(`Press an arrow key to start`, cw / 2, 100);
-    ctx.font = "16px Helvetica";
-    ctx.fillText(`Use ← and → to steer`, cw / 2, 124);
-    ctx.fillStyle = "#E8E9EE";
+    ctx.fillStyle = "#0a3805";
+    ctx.font = "70px Helvetica";
+    ctx.fillText(`SkiFree!`, cw / 2, 300);
+    ctx.font = "35px bold";
+    ctx.fillText(`Press an arrow key to start`, cw / 2, 350);
+    ctx.font = "25px bold";
+    ctx.fillText(`Use ← and → to steer`, cw / 2, 400);
+    ctx.fillStyle = "#830bc8";
   }
 
   // Score
   ctx.textAlign = "start";
-  ctx.font = "14px Helvetica";
-  ctx.fillText(`Score: ${Math.floor((totalY - 1) / 4)} feet`, 10, 25);
+  ctx.font = "30px bold";
+  ctx.fillText(`Score: ${Math.floor((totalY - 1) / 4)} Meters`, 10, 25);
 
   // Draw Skier
   const skier = new Path2D();
