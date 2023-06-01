@@ -87,14 +87,12 @@ function draw() {
     ctx.font = "25px bold";
     ctx.fillText(`Use ← and → to steer`, cw / 2, 400);
     ctx.fillStyle = "#830bc8";
-
   }
 
   // Score
   ctx.textAlign = "start";
   ctx.font = "30px bold";
   ctx.fillText(`Score: ${Math.floor((totalY - 1) / 4)} Meters`, 10, 25);
-
 
   // Draw Skier
   const skier = new Path2D();
